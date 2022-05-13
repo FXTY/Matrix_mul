@@ -60,33 +60,30 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 2. 消除内存引用
 3. 循环展开
 
-### 并行矩阵优化
 
 ### 异构矩阵优化
 
 ## 优化结果
 
-<table style="text-align: center;">
+<table text-align="center">
 	<tr>
 	    <th style = "width:15%">优化方法</th>
 	    <th style = "width:10%">数据规模</th>
-	    <th style = "width:10%">数据类型</th>  
-	    <th style = "width:15%">运行时间</th>  
-        <th style = "width:10%">加速比</th>
+	    <th style = "width:10%">数据类型</th>
+	    <th style = "width:15%">运行时间</th>
+      <th style = "width:10%">加速比</th>
 	    <th style = "width:40%">备注</th>
 	</tr>
 	<tr>
 	    <td rowspan="3">矩阵乘基本程序</td>
-	</tr>
-	<tr>
-	    <td>1024*1024</td>
-	    <td rowspan="3">double</td>
+			<td>1024*1024</td>
+			<td rowspan="3">double</td>
 	    <td>7.99 s</td>
 	    <td>1</td>
 	    <td rowspan="3">无</td>
 	</tr>
 	<tr>
-		<td>2048*2048</td>
+			<td>2048*2048</td>
 	    <td>69.58 s</td>
 	    <td>1</td>
 	</tr>
@@ -97,8 +94,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
 	<tr>
 	    <td rowspan="3">循环重排序</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>3.81 s</td>
@@ -117,8 +112,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
 	<tr>
 	    <td rowspan="3">消除内存引用</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>5.32 s</td>
@@ -137,8 +130,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
 	<tr>
 	    <td rowspan="3">循环重排序+消除内存引用</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>3.34 s</td>
@@ -157,8 +148,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">矩阵转置</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>3.94 s</td>
@@ -177,8 +166,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">矩阵转置+消除内存引用</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>2.82 s</td>
@@ -197,8 +184,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">1*2循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>7.86 s</td>
@@ -217,8 +202,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">1*4循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -237,8 +220,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">1*8循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -257,8 +238,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">1*16循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -277,8 +256,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">2*1循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -297,8 +274,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">2*2循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -317,8 +292,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">2*4循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -337,8 +310,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">2*8循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -357,8 +328,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">4*1循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -377,8 +346,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">4*2循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -397,8 +364,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">4*4循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -417,8 +382,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">8*1循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -437,8 +400,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">8*2循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -457,8 +418,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">16*1循环展开</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
@@ -477,8 +436,6 @@ void matrix_mul_base(TYPE *matrix_1, TYPE *matrix_2, TYPE *matrix_3)
 	</tr>
     <tr>
 	    <td rowspan="3">1*2循环展开+矩阵转置</td>
-	</tr>
-	<tr>
 	    <td>1024*1024</td>
 	    <td rowspan="3">double</td>
 	    <td>- s</td>
